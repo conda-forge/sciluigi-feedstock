@@ -1,6 +1,6 @@
 {% set name = "sciluigi" %}
 {% set version = "0.9.4b5" %}
-{% set compress_type = "tar.gz" %}
+{% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "201f360d48352d0ba582824e25a03e0dd026a613764ecc7cab576541dafc66bb" %}
 {% set build = 0 %}
@@ -10,8 +10,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
