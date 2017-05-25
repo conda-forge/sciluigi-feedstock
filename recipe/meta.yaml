@@ -35,7 +35,7 @@ about:
   home: https://github.com/pharmbio/sciluigi
   # license_file: No MANIFEST.in - see https://github.com/pharmbio/sciluigi/pull/35
   # Manually including a copy.
-  license_file: '{{ RECIPE_DIR }}/LICENSE'
+  license_file: LICENSE
   license: MIT
   license_family: MIT
   summary: 'Helper library for writing dynamic, flexible workflows in luigi'
