@@ -1,8 +1,8 @@
 {% set name = "sciluigi" %}
-{% set version = "0.9.5b6" %}
+{% set version = "0.9.6b7" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "7bf783ae5d57c477af86adf196f23a04de4b486471d11218b114a98756e3419c" %}
+{% set hash = "201ba29b0260981955e94542dc66aa4321b14cff3132281209839e6c6486ff5a" %}
 {% set build = 0 %}
 
 package:
@@ -15,6 +15,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
@@ -25,7 +26,7 @@ requirements:
 
   run:
     - python
-    - luigi >=1.3,<=2.1
+    - luigi
 
 test:
   imports:
@@ -33,8 +34,6 @@ test:
 
 about:
   home: https://github.com/pharmbio/sciluigi
-  # license_file: No MANIFEST.in - see https://github.com/pharmbio/sciluigi/pull/35
-  # Manually including a copy.
   license_file: LICENSE
   license: MIT
   license_family: MIT
