@@ -1,9 +1,9 @@
 {% set name = "sciluigi" %}
-{% set version = "0.9.6b7" %}
+{% set version = "0.9.7" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "201ba29b0260981955e94542dc66aa4321b14cff3132281209839e6c6486ff5a" %}
-{% set build = 1 %}
+{% set hash = "9afecf5a739cc3cfd2ca89d3c11b5821e1efb0fdb44de0aba45acd9145db3e73" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
