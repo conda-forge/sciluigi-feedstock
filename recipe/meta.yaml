@@ -3,7 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "201ba29b0260981955e94542dc66aa4321b14cff3132281209839e6c6486ff5a" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -21,11 +21,11 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - luigi
 
 test:
@@ -44,3 +44,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
