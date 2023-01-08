@@ -5,21 +5,33 @@ Home: https://github.com/pharmbio/sciluigi
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sciluigi-feedstock/blob/main/LICENSE.txt)
 
 Summary: Helper library for writing dynamic, flexible workflows in luigi
 
+Development: https://github.com/pharmbio/sciluigi
 
+Documentation: https://github.com/pharmbio/sciluigi
 
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/sciluigi-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/sciluigi-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5802&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sciluigi-feedstock?branchName=main">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sciluigi/badges/version.svg)](https://anaconda.org/conda-forge/sciluigi)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sciluigi/badges/downloads.svg)](https://anaconda.org/conda-forge/sciluigi)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sciluigi-green.svg)](https://anaconda.org/conda-forge/sciluigi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sciluigi.svg)](https://anaconda.org/conda-forge/sciluigi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sciluigi.svg)](https://anaconda.org/conda-forge/sciluigi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sciluigi.svg)](https://anaconda.org/conda-forge/sciluigi) |
 
 Installing sciluigi
 ===================
@@ -28,23 +40,52 @@ Installing `sciluigi` from the `conda-forge` channel can be achieved by adding `
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sciluigi` can be installed with:
+Once the `conda-forge` channel has been enabled, `sciluigi` can be installed with `conda`:
 
 ```
 conda install sciluigi
 ```
 
-It is possible to list all of the versions of `sciluigi` available on your platform with:
+or with `mamba`:
+
+```
+mamba install sciluigi
+```
+
+It is possible to list all of the versions of `sciluigi` available on your platform with `conda`:
 
 ```
 conda search sciluigi --channel conda-forge
 ```
 
+or with `mamba`:
+
+```
+mamba search sciluigi --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search sciluigi --channel conda-forge
+
+# List packages depending on `sciluigi`:
+mamba repoquery whoneeds sciluigi --channel conda-forge
+
+# List dependencies of `sciluigi`:
+mamba repoquery depends sciluigi --channel conda-forge
+```
+
 
 About conda-forge
 =================
+
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -54,13 +95,15 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](http://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](http://docs.anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
-[conda-smithy](http://github.com/conda-forge/conda-smithy) has been developed.
+[conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
@@ -96,7 +139,13 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@pmlandwehr](https://github.com/pmlandwehr/)
+
