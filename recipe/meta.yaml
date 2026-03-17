@@ -1,9 +1,8 @@
 {% set name = "sciluigi" %}
 {% set version = "0.9.6b7" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
 {% set hash = "201ba29b0260981955e94542dc66aa4321b14cff3132281209839e6c6486ff5a" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -11,8 +10,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  sha256: {{ hash }}
 
 build:
   noarch: python
@@ -20,15 +19,17 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - setuptools
 
   run:
-    - python
+    - python >={{ python_min }}
     - luigi
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - sciluigi
 
